@@ -111,9 +111,9 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: start;
-  align-items: center;
+  align-items: start;
   margin: 0 auto;
-  gap: 10px;
+  gap: 50px;
   width: 100%;
   height: 100%;
 }
@@ -124,12 +124,11 @@ main {
   background-color: #fff;
   border-radius: 10px;
   justify-content: start;
-  height: 350px;
+  height: 100%;
   overflow: hidden;
 }
 
 .img-box {
-  height: 210px;
   overflow: hidden;
 }
 
@@ -156,6 +155,10 @@ main {
   font-size: 0.8rem;
   margin-top: 10px;
   color: gray;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .loader {
@@ -200,6 +203,7 @@ main {
 
   .news-container {
     display: grid;
+    gap: 20px;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -217,7 +221,6 @@ main {
     background-color: #fff;
     border-radius: 10px;
     justify-content: start;
-    height: 280px;
   }
 
   .img-box {
