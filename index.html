@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flash⚡News</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Flash⚡News</div>
+
+      <nav>
+        <div class="search-box">
+          <input class="search" type="text" />
+          <i
+            class="fa-solid fa-magnifying-glass search-btn"
+            style="color: #d9dcd6"
+          ></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="heading">
+          <h2>Latest News</h2>
+
+          <div class="badge">
+            <span class="active" data-category="india">india</span>
+            <span data-category="politics">Politics</span>
+            <span data-category="business">Business</span>
+            <span data-category="tech">Tech</span>
+            <span data-category="arts">Arts</span>
+            <span data-category="science">Science</span>
+            <span data-category="health">Health</span>
+            <span data-category="sports">Sports</span>
+          </div>
+        </div>
+
+        <div class="news-container"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
