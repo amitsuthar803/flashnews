@@ -1,19 +1,28 @@
-const apikey = "e05d163c0cf144be99e887263097758e";
-const URL = `https://newsapi.org/v2/everything?q=india&apiKey=${apikey}`;
+const url = "https://google-news13.p.rapidapi.com/business?lr=en-US";
+const options = {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "5d1b8b2026mshf459695716c091ep18ca55jsn6e72fbad925b",
+    "x-rapidapi-host": "google-news13.p.rapidapi.com",
+  },
+};
+
 const newsContainer = document.querySelector(".news-container");
 const searchInput = document.querySelector(".search");
 const searchBtn = document.querySelector(".search-btn");
 const badges = document.querySelectorAll(".badge span");
 
-getData("india");
+getData("latest");
 
 async function fetchData(query) {
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${query}&apiKey=${apikey}`
+      `https://google-news13.p.rapidapi.com/${query}?lr=en-IN`,
+      options
     );
     const data = await response.json();
-    return data.articles;
+    console.log(data.items);
+    return data.items;
   } catch (error) {
     console.error("Error while fetching the data:", error);
     return [];
@@ -25,11 +34,13 @@ function displayNews(articles) {
   newsContainer.innerHTML = "";
 
   articles.forEach((article) => {
-    if (article.urlToImage) {
+    console.log(article.images.thumbnail);
+
+    if (article.images) {
       const newsCardHTML = `
         <div class="news-card">
         <div class='img-box'>
-        <img class="news-img" src="${article.urlToImage}"   alt="${article.title}">
+        <img class="news-img" src="${article.images.thumbnailProxied}"   alt="${article.title}">
         </div>
           <div class="news-data">
             <h3>${article.title}</h3>
